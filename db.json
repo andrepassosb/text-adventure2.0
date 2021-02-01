@@ -1,0 +1,235 @@
+{
+    "bg": "https://www.fdcomunicacao.com.br/wp-content/uploads/2020/12/skyrim-1-1536x864.jpg",
+    "title": "Kolb and the Dragon: A book for Nord Boy",
+    "description": "Kolb e o Dragão é um livro de aventura com encontrado em Skyrim,se divirta com seus 12 finais.",
+    "questions": [
+      {
+        "pagina":1,
+        "image": "",
+        "title": "Kolb foi um bravo guerreiro Nórdico. Um dia, seu chefe pediu Kolb para matar um dragão do mal que ameaçava a sua aldeia. Vá até a passagem de montanha, Kolb, seu chefe disse. Você vai encontrar o Dragão do outro lado.",
+        "description": "",
+        "answer": 0,
+        "alternatives": 
+          {"text":
+            ["Inicie sua jornada"],
+          "route":
+            [2]}
+      },
+      {
+        "pagina":2,
+        "image": "",
+        "title": "Kolb levou seu machado favorito e escudo e caminhou até a passagem, onde ele encontrou uma caverna fria,uma caverna ventosa e uma trilha estreita.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Entre na caverna fria",
+              "Entre na caverna vento",
+            "Caminhe até a trilha"],
+          "route":
+            [17,8,12]}
+      },
+      {
+        "pagina":3,
+        "image": "",
+        "title": "Kolb subiu uma colina rochosa. Ele podia ver o dragão dormindo abaixo, e uma taberna de uma estrada nas proximidades",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Desça",
+            "Visite taberna"],
+          "route":
+            [16,14]}
+      },
+      {
+        "pagina":4,
+        "image": "",
+        "title": "Seguindo o mau cheiro, Kolb encontrou um Orc imundo! O Orc rosnou e ameaçou Kolb com seu porrete cravado.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Levante o escudo",
+            "Use o machado"],
+          "route":
+            [9,13]}
+      },
+      {
+        "pagina":5,
+        "image": "",
+        "title": "Pisando através do pântano, Kolb descobriu um fantasma lamentando bloqueando seu caminho.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Ataque Fantasma",
+            "Dar Ouro"],
+          "route":
+            [15,10]}
+      },
+      {
+        "pagina":6,
+        "image": "",
+        "title": "A cabeça do machado se alojou no pescoço duro da escamosa da besta. Ela gemia e se debatia, mas Kolb serrava o pescoço, matando a besta. Kolb voltou para casa vitorioso, e sua aldeia nunca foi incomodado pelo dragão novamente.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["O FIM"],
+          "route":
+            [1]}
+      },
+      {
+        "pagina":7,
+        "image": "",
+        "title": "Deixando o pântano atrás dele, Kolb podia ver o covil do dragão nas proximidades, bem como uma taverna, pequena e acolhedora.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Vá para a Toca ",
+            "Ir para Taverna"],
+          "route":
+            [16,14]}
+      },
+      {
+        "pagina":8,
+        "image": "",
+        "title": "Uma forte rajada de vento soprou a tocha de Kolb, ele escorregou bateu em um poço onde partiu seu crânio e morreu.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+        {"text":
+          ["O FIM"],
+        "route":
+          [1]}
+      },
+      {
+        "pagina":9,
+        "image": "",
+        "title": "O Orc gargalhou quando seu porrete estilhaçou escudo Kolb e bateu em seu rosto.Kolb morreu, e o Orc teve sopa de seus ossos.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+        {"text":
+          ["O FIM"],
+        "route":
+          [1]}
+      },
+      {
+        "pagina":10,
+        "image": "",
+        "title": "Kolb se lembrou de uma história de seu avo lhe disse e jogou ouro para o fantasma, e ele desapareceu o que lhe permite passar",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Vá em frente."],
+          "route":
+            [7]}
+      },
+      {
+        "pagina":11,
+        "image": "",
+        "title": "Kolb se arrastou em direção ao ventre da besta, mas antes que ele levantasse os olhos,a besta acordou e o devorou.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+        {"text":
+          ["O FIM"],
+        "route":
+          [1]}
+      },
+      {
+        "pagina":12,
+        "image": "",
+        "title": "Subindo, Kolb encontrou um acampamento. Ele se encontrou com um homem sábio que compartilhou o pão e mostrou dois caminhos para o covil do dragão. Um foi através das colinas, o outro através de um pântano.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Tome as colinas",
+            "Vá ao pântano"],
+          "route":
+            [3,5]}
+      },
+      {
+        "pagina":13,
+        "image": "",
+        "title": "Antes que o Orc pudesse atacar, Kolb balançou seu poderoso machado. A cabeça do Orc rolou pelo chão",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Continue bravo guerreiro"],
+          "route":
+            [3]}
+      },
+      {
+        "pagina":14,
+        "image": "",
+        "title": "Kolb parou na taverna para descansar antes de lutar contra o dragão. Elfos corram à taberna, e envenenado seu hidromel para que eles pudessem roubar seu ouro.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+        {"text":
+          ["O FIM"],
+        "route":
+          [1]}
+      },
+      {
+        "pagina":15,
+        "image": "",
+        "title": "Kolb girou o machado tão forte quanto podia, mas o fantasma não parecia perceber. O fantasma enfeitiçou Kolb, e um sono profundo levou-o, do qual ele nunca acordou.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+        {"text":
+          ["O FIM"],
+        "route":
+          [1]}
+      },
+      {
+        "pagina":16,
+        "image": "",
+        "title": "Kolb descobriu o covil onde o dragão dormia, nuvens de fumaça emanando de suas narinas. O ar fez os olhos de Kolb arderem, e ele quase caiu sobre os ossos de um homem. O animal estava em seu lado, a garganta e barriga ambas desprotegidas.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Golpear o pescoço",
+            "Golpear a barriga"],
+          "route":
+            [1]}
+      },
+      {
+        "pagina":17,
+        "image": "",
+        "title": "Kolb entrou na caverna congelada, mas o seu sangue Nórdico o manteve quente, Um túnel fedorento o deixou tonto, e vento uivava de outro à sua esquerda. A escada estava nas proximidades.",
+        "description": "",
+        "answer": 1,
+        "alternatives": 
+          {"text":
+            ["Pegue o túnel fedorento",
+            "Pegue o túnel vento",
+            "Suba a escada"],
+          "route":
+            [4,8,12]}
+      }
+    ],
+    "external": [
+      ""
+    ],
+    "theme": {
+      "colors": {
+        "primary": "#0d47a1",
+        "secondary": "#29b6f6",
+        "mainBg": "#171B35",
+        "contrastText": "#FFFFFF",
+        "wrong": "#FF5722",
+        "success": "#4CAF50"
+      },
+      "borderRadius": "4px"
+    }
+  }
