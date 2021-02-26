@@ -36,7 +36,10 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>{db.title}</title>
+      <title>Adventure Text</title>
+        <meta property="og:title" content={db.title} />
+        <meta property="og:description" content={db.description} />
+        {/* <meta property="og:image" content= "https://i.postimg.cc/xj7WR7M8/skyrim-book-by-minomi9-d58ylte-fullview.jpg" /> */}
       </Head>
       <QuizContainer>
         <QuizLogo />

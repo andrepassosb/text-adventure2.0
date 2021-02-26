@@ -8,56 +8,42 @@ import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import AlternativesForm from '../src/components/AlternativesForm';
 import Button from '../src/components/Button';
+import styled from 'styled-components';
+import { Book } from '@styled-icons/fa-solid/';
+import { Letsencrypt } from 'styled-icons/simple-icons';
+import Typed from 'react-typed';
 
-function ResultWidget({ results }) {
+
+const Li = styled.li`
+  // list-style-type:none
+`
+
+
+
+function Adventure({seletcs,currentQuestion,currentTitle}) {
   return (
-    <Widget>
+
+        <Widget>
       <Widget.Header>
-        Tela de Resultado:
+        <h3>
+          "Kolb and the Dragon: A book for Nord Boy"
+        </h3>
       </Widget.Header>
 
       <Widget.Content>
-        <p>
-          Você acertou
-          {' '}
-          {/* {results.reduce((somatoriaAtual, resultAtual) => {
-            const isAcerto = resultAtual === true;
-            if (isAcerto) {
-              return somatoriaAtual + 1;
-            }
-            return somatoriaAtual;
-          }, 0)} */}
-          {results.filter((x) => x).length}
-          {' '}
-          perguntas
+       <p>
+         {currentTitle.map((currentTitle) => 
+         <Li><h1>
+         <Typed
+          strings={[currentTitle]}
+          typeSpeed={20}
+          showCursor={false}
+         />
+         </h1></Li>)
+        //  {/* <Book size="20" />{' '} */}
+       }         
         </p>
-        <ul>
-          {results.map((result, index) => (
-            <li key={`result__${result}`}>
-              #
-              {index + 1}
-              {' '}
-              Resultado:
-              {result === true
-                ? 'Acertou'
-                : 'Errou'}
-            </li>
-          ))}
-        </ul>
-      </Widget.Content>
-    </Widget>
-  );
-}
-
-function LoadingWidget() {
-  return (
-    <Widget>
-      <Widget.Header>
-        Carregando...
-      </Widget.Header>
-
-      <Widget.Content>
-        [Desafio do Loading]
+        {/* <ul>{seletcs} - {currentQuestion}</ul> */}
       </Widget.Content>
     </Widget>
   );
@@ -66,41 +52,22 @@ function LoadingWidget() {
 function QuestionWidget({
   question,
   questionIndex,
-  totalQuestions,
   onSubmit,
-  addResult,
   addSelect,
 }) {
-  const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
+  const [selectedAlternative, setSelectedAlternative] = React.useState([]);
   const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === 0;
 
   return (
     <Widget>
-      <Widget.Header>
-        {/* <BackLinkArrow href="/" /> */}
-        <h3>
-          {/* {`Pergunta ${questionIndex + 1} de ${totalQuestions}`} */}
-          "Kolb and the Dragon: A book for Nord Boy"
-        </h3>
-      </Widget.Header>
-
-      {/* <img
-        alt="Descrição"
-        style={{
-          width: '100%',
-          height: '150px',
-          objectFit: 'cover',
-        }}
-        src={question.image}
-      /> */}
       <Widget.Content>
-        <h2>
+        {/* <h2>
           {question.title}
-        </h2>
+        </h2> */}
         <p>
-          {question.description}
+          {question.description}  
         </p>
 
         <AlternativesForm
@@ -110,11 +77,9 @@ function QuestionWidget({
             addSelect(selectedAlternative);
             //console.log(selectedAlternative);
             setTimeout(() => {
-              addResult(isCorrect);
               onSubmit();
               setIsQuestionSubmited(false);
-              //setSelectedAlternative(undefined);
-            }, 3 * 1000);
+            }, 1 * 1000);
           }}
         >
           {question.alternatives.text.map((alternative, alternativeIndex) => {
@@ -137,18 +102,13 @@ function QuestionWidget({
                   type="radio"
                 />
                 {alternative}
+                
               </Widget.Topic>
             );
           })}
-
-          {/* <pre>
-            {JSON.stringify(question, null, 4)}
-          </pre> */}
           <Button type="submit">
             Confirmar
           </Button>
-          {/* {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
-          {isQuestionSubmited && !isCorrect && <p>Você errou!</p>} */}
         </AlternativesForm>
       </Widget.Content>
     </Widget>
@@ -162,27 +122,29 @@ const screenStates = {
 };
 export default function QuizPage() {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
-  const [results, setResults] = React.useState([]);
+  const [selects,setSelect] = React.useState([]);
   const totalQuestions = db.questions.length;
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
+  const [currentQuestionArray, setCurrentQuestionArray] = React.useState([0]);
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
-  let x = 0;
-
+  let selected = 0;
+  
+  function CurrentQuestionArray (currentQuestion){
+    setCurrentQuestionArray([...currentQuestionArray,currentQuestion]);
+    //console.log(currentQuestionArray)
+  }
+  
+ 
   function addSelect(select) {
-    console.log(select);
-    x = select;
-    return x;
+    //console.log(select);
+    setSelect([...selects,select]);
+    //console.log(selects);
+    selected = select;
+    return selected;
   }
-
-  function addResult(result) {
-    // results.push(result);
-    setResults([
-      ...results,
-      result,
-    ]);
-  }
-
+  
+  
   // [React chama de: Efeitos || Effects]
   // React.useEffect
   // atualizado === willUpdate
@@ -191,40 +153,53 @@ export default function QuizPage() {
     // fetch() ...
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
-  // nasce === didMount
+    }, 0.1 * 1000);
+    // nasce === didMount
   }, []);
-
+  
+  const startTitle = db.questions[0].title;
+  const [currentTitleArray, setCurrentTitle] = React.useState([startTitle]);
+  
+  function CurrentTitleArray (currentTitle){
+    setCurrentTitle([...currentTitleArray,currentTitle]);
+   }
+   
+  function onEsvaziarArray () {
+    setCurrentTitle([startTitle]);
+    console.log('foi executado',currentTitleArray);
+  }
+  
   function handleSubmitQuiz() {
-    const nextQuestion = db.questions[questionIndex].alternatives.route[x] - 1;
-    console.log(db.questions[questionIndex].alternatives.route[x]);
-    if (nextQuestion < totalQuestions) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setScreenState(screenStates.RESULT);
+    const nextQuestion = db.questions[questionIndex].alternatives.route[selected] - 1;
+    if (nextQuestion === 0) {
+      onEsvaziarArray ();         
     }
+    setCurrentQuestion(nextQuestion);
+    CurrentQuestionArray(nextQuestion);
+    const nextQuestionTitle = db.questions[nextQuestion].title;
+    CurrentTitleArray(nextQuestionTitle)
   }
 
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
+      <Adventure  
+      seletcs={selects}
+      currentQuestion={currentQuestionArray}
+      currentTitle={currentTitleArray}/>
         {screenState === screenStates.QUIZ && (
           <QuestionWidget
-
             question={question}
             questionIndex={questionIndex}
             totalQuestions={totalQuestions}
             onSubmit={handleSubmitQuiz}
-            addResult={addResult}
             addSelect={addSelect}
+            selects={selects}
           />
         )}
-
-        {screenState === screenStates.LOADING && <LoadingWidget />}
-
-        {screenState === screenStates.RESULT && <ResultWidget results={results} />}
       </QuizContainer>
     </QuizBackground>
   );
 }
+
